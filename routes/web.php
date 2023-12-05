@@ -120,7 +120,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 });
 
 
-    // ini route Petugas
+    // ini route untuk Petugas
 Route::prefix('petugas')->middleware(['auth', 'isPetugas'])->group(function () {
     Route::controller(dashPetugasController::class)->group(function () {
         Route::get('/home', 'index')->name('petugas.index.home');
