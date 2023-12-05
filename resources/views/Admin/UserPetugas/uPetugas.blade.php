@@ -1,9 +1,9 @@
 @extends('template.base')
-@section('title', 'Data infoUKS')
+@section('title', 'user Petugas')
 @section('content')
 
 <div class="rounded h-100 p-4">
-    <h3 class="mb-4">Nama Jabatan</h3>
+    <h3 class="mb-4">Nama user Petugas</h3>
 
     <!-- Header -->
     <section class="content-header">
@@ -14,7 +14,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right" style="margin-left: 300px; margin-top: -55px;">
                         <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
-                        <li class="breadcrumb-item active">Jabatan</li>
+                        <li class="breadcrumb-item active">U.Petugas</li>
                     </ol>
                 </div>
             </div>
@@ -22,37 +22,41 @@
     </section>
     <!-- ENd Header -->
 
-    <button href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-default">Add Jabatan</button>
-
+    
+    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-default">Add Data</a>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Jabatan</th>
+                <th scope="col">Nama Petugas</th>
+                <th scope="col">Email</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($jabatan as $row)
-            @csrf
+        @foreach ($User as $row)
+        @csrf
             <tr>
 
                 <td>
-                    {{ $loop->iteration }}
-                </td>
-                <td>
-                    {{ $row->nama_jabatan }}
+                {{ $loop->iteration }}
                 </td>
 
                 <td>
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{ $row->id }}"><i class="fa fa-solid fa-pen"></i></a>
+                 {{ $row->name }}
+                </td>
+
+                <td>
+                 {{ $row->email }}
+                </td>
+
+                <td>
                     <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ $row->id }}"><i class="fa fa-solid fa-trash"></i></a>
                 </td>
             </tr>
-            @include('Admin.Jabatan.updateJabatan')
-            @include('Admin.Jabatan.deleteJabatan')
-            @endforeach
+            @include('Admin.UserPetugas.deleteUpetugas')
+        @endforeach
         </tbody>
     </table>
 </div>
@@ -64,15 +68,25 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Nama Jabatan</h5>
+                <h5 class="modal-title">Tambah Nama Upetugas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('Admin.tambah.jabatan')}}" method="post">
+                <form action="{{ route('Admin.tambah.Upetugas')}}" method="post">
                     @csrf
                     <div class="mb-2">
-                        <label for="nama_jabatan">Nma Jabatan</label>
-                        <input type="text" id="nama_jabatan" name="nama_jabatan" class="form-control" required><br>
+                        <label for="name">Nama Petugas</label>
+                        <input type="text" id="name" name="name" class="form-control" required><br>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" class="form-control" required><br>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" class="form-control" required><br>
                     </div>
 
                     <div class="modal-footer">

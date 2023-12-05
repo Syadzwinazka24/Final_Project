@@ -1,15 +1,15 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import Data from '../Components/Data';
+import Pusing from '../Components/Pusing';
 import Footer1 from '../Components/Footer1';
-const patientData = ({pasien}) => {
+const DetailPusing = () => {
     return (
         <div>
             < Navbar/>
-            < Data data={pasien}/>
+            < Pusing/>
             < Footer1/>
         </div>
     );
 };
 
-export default patientData;
+export default DetailPusing;

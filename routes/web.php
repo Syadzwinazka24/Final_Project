@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ChartController;
 use App\Http\Controllers\Admin\dataPasienController;
 use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\JabatanController;
+use App\Http\Controllers\Admin\loginPetugasController;
 use App\Http\Controllers\Admin\ObatController;
 use App\Http\Controllers\Admin\PetugasController;
 use App\Http\Controllers\Admin\RiwayatController;
@@ -33,6 +34,12 @@ Route::controller(FrontController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/info', 'information');
     Route::get('/data', 'patientData');
+    Route::get('/obat', 'dataObat');
+    Route::get('/deskripsi', 'deskripsiInfo');
+    Route::get('/detailDemam', 'dDemam');
+    Route::get('/detailMagh', 'magh');
+    Route::get('/detailPusing', 'pusing');
+    Route::get('/detailDepresi', 'depresi');
 });
 
 // Route::get('/', function () {
@@ -102,6 +109,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     // ini buat Chart
     Route::controller(ChartController::class)->group(function () {
         Route::get('/chart', 'chart')->name('index.chart');
+    });
+
+       // Tabel User buat Petugas
+       Route::controller(loginPetugasController::class)->group(function () {
+        Route::get('/Upetugas', 'userPetugas')->name('Admin.index.Upetugas');
+        Route::post('/tambah/Upetugas', 'tambahUpetugas')->name('Admin.tambah.Upetugas');
+        Route::delete('/deleteUpetugas/{id}', 'deleteUpetugas')->name('Admin.delete.Upetugas');
     });
 });
 

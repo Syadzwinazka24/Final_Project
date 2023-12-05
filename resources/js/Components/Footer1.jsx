@@ -2,13 +2,13 @@ import React from 'react';
 import logo from '../../../public/img/logo-removebg-preview.png';
 const Footer1 = () => {
     return (
-        <footer class="bg-neutral-700 dark:bg-gray-900 px-30 pt-20">
+        <footer class="bg-gray-900 dark:bg-gray-800 px-30 pt-20">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
               <div class="mb-6 md:mb-0">
                   <a href="https://flowbite.com/" class="flex">
                       <img src={logo} class="h-20" alt="FlowBite Logo" />
-                      <span class="a font-Cookie hover:text-cyan-600 self-center text-4xl font-semibold whitespace-nowrap text-gray-400">Website UKS</span>
+                      <span class="a font-Cookie hover:text-cyan-600 self-center text-4xl font-semibold whitespace-nowrap text-gray-400">Website </span><span className='a font-Cookie hover:text-gray-400 self-center text-4xl font-semibold whitespace-nowrap text-cyan-600 '>UKS</span>
                   </a>
               </div>
               <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

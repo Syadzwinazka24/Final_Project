@@ -25,8 +25,8 @@
 <!-- Chart -->
 
 <section class="content">
-    <div class="container-fluid">
-        <div id="chart"></div>
+    <div class="container">
+        <div id="chart" style="margin-right: 15rem;"></div>
     </div>
 
 

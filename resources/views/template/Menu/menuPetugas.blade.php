@@ -9,4 +9,4 @@
         <a href="{{ route('petugas.index.obat') }}" class="nav-item nav-link"><i class="fa fa-tablets me-2"></i>Data Obat</a>
         <a href="{{ route('petugas.index.info') }}" class="nav-item nav-link"><i class="fa fa-book-medical me-2"></i>Info UKS</a>
     </div>
-</nav>
+</nav> 

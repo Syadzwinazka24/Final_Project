@@ -68,13 +68,13 @@
         <div id="chartRekap"></div>
     </div>
 </div>
-<!-- Content Sale & Revenue End -->
-
-<!-- chart -->
 @stop
 
 @section('footer')
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- Content Sale & Revenue End -->
+
+<!-- chart -->
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
     Highcharts.chart('chartRekap', {
         chart: {
@@ -120,5 +120,5 @@
 
         }]
     });
-</script>
+</script> -->
 @endsection

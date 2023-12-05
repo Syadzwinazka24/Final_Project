@@ -1,31 +1,40 @@
 import React from "react";
-import hireMe from "../../../public/img/Premium_Vector___Online_doctor_concept-removebg-preview.png";
-const Hireme = () => {
+import goal from "../../../public/img/Premium_Vector___Online_doctor_concept-removebg-preview.png";
+const About = () => {
+    const info = [
+        { text: "Years experience", count: "04" },
+        { text: "Completed Projects", count: "24" },
+        { text: "Companies Work", count: "06" },
+    ];
     return (
-        <section id="hireme" className="py-10 px-3 text-white bg-gray-700 pt-20">
-            <div className="text-center">
+        <section id="about" className="py-10 text-white  bg-gray-600">
+            <div className="text-center mt-8">
                 <h3 className="text-4xl font-semibold">
-                    Tujuan <span className="text-cyan-600">UKS</span>
+                    <span className="text-white">UKS</span> <span className="text-cyan-600">Objectives</span>
                 </h3>
-                <p className="text-gray-400 mt-3 text-lg">What is the purpose of UKS?</p>
-            </div>
-            <div className="bg-gray-700 relative px-20 rounded-2xl py-5 lg:max-w-4xl mx-auto min-h-[24rem] mt-24 flex gap-6 lg:flex-row flex-col-reverse items-center">
-                <div className="a ml-50">
-                    <h2 className="text-2xl font-semibold">
-                        Tujuan UKS adalah
-                    </h2>
-                    <p className="lg:text-left text-justify max-w-lg text-sm mt-4 text-gray-200 leading-6">
-                        untuk menciptakan lingkungan yang sehat bagi warga sekolah, sehingga akan berpengaruh terhadap keharmonisan lingkungan dan prestasi akademik siswa di sekolah. Selain itu, UKS juga dapat membina jiwa sosial dengan menumbuhkan rasa tanggung jawab dan menolong sesama manusia.
-                    </p>
+                <p className="text-gray-400 my-3 text-lg">What is purpose of UKS ?</p>
+                <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
+                    <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
+                        <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
+                            <img
+                                src={goal}
+                                alt=""
+                                width="150%"
+                            />
+                        </div>
+                    </div>
+                    <div className="p-2">
+                        <div className="text-gray-300 my-3">
+                            <p className="text-justify leading-7 w-11/12 mx-auto">
+                                Tujuan Usaha Kesehatan Sekolah bertujuan meningkatkan kesehatan, mutu pendidikan dan prestasi belajar peserta didik yang tercermin dalam kehidupan perilaku hidup bersih sehat (PHBS) dan lingkungan sekolah yang sehat sehingga memungkinkan peserta didik mengalami pertumbuhan dan perkembangan yang optimal.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-                <img
-                    src={hireMe}
-                    alt=""
-                    className="lg:h-[32rem] h-80 lg:absolute bottom-0 -right-10 object-cover ml"
-                />
             </div>
         </section>
     );
 };
 
-export default Hireme;
+export default About;

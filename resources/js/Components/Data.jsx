@@ -1,54 +1,51 @@
 import React from 'react';
 import { Table } from 'flowbite-react';
+import { Carousel } from 'flowbite-react';
+import buah from "../../../public/img/buah.jpg";
+import olahraga from "../../../public/img/olahraga.jpg";
+import minum from "../../../public/img/minum.jpg";
+import tidur from "../../../public/img/tidur2.jpg";
 
-const Data = () => {
+const Data = ({ data }) => {
     return (
-        <div className="overflow-x-auto min-h-screen items-center bg-gray-800 pt-20">
-            <div>
+        <div className="overflow-x-auto min-h-screen items-center bg-gray-800 px-10 a pt-24">
+
+            {/* <div className="h-auto w-full sm:h-64 xl:h-80 2xl:h-96">
+                <Carousel slideInterval={5000}>
+                    <img src= {buah}  alt="..."/>
+                    <img src= {olahraga} alt="..." />
+                    <img src= {minum} alt="..." />
+                    <img src= {tidur} alt="..." />
+                </Carousel>
+            </div> */}
+
+            <h3 className="text-center text-4xl font-semibold a pt-10 pb-10">
+                <span className='text-gray-300'>Data </span><span className="text-cyan-600">Pasien</span>
+                <p className='text-center text-2xl text-gray-200'>Ini adalah data-data pasien yang konsultasi ke UKS pada bulan November 2023</p>
+            </h3>
+
+            <div className='overflow-x-auto'>
                 <Table hoverable>
                     <Table.Head>
-                        <Table.HeadCell>Product name</Table.HeadCell>
-                        <Table.HeadCell>Color</Table.HeadCell>
-                        <Table.HeadCell>Category</Table.HeadCell>
-                        <Table.HeadCell>Price</Table.HeadCell>
-                        <Table.HeadCell>Price</Table.HeadCell>
-                        <Table.HeadCell>Price</Table.HeadCell>
+                        <Table.HeadCell className='bg-gray-400'>No</Table.HeadCell>
+                        <Table.HeadCell className='bg-gray-400'>Nama Pasien</Table.HeadCell>
+                        <Table.HeadCell className='bg-gray-400'>Tanggal Lahir</Table.HeadCell>
+                        <Table.HeadCell className='bg-gray-400'>Kelas</Table.HeadCell>
+                        <Table.HeadCell className='bg-gray-400'>Jabatan</Table.HeadCell>
                     </Table.Head>
                     <Table.Body className="divide-y">
-                        <Table.Row className="bg-gray-500">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-cyan-500">
-                                {'Apple MacBook Pro 17"'}
+                    {data.map((pasien) => (
+                        <Table.Row className="bg-gray-300">
+                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
+                               {pasien.id}
                             </Table.Cell>
-                            <Table.Cell className='text-gray-900'>Sliver</Table.Cell>
-                            <Table.Cell>Laptop</Table.Cell>
-                            <Table.Cell>$2999</Table.Cell>
-                            <Table.Cell>$2999</Table.Cell>
-                           
+                            <Table.Cell className='text-gray-900'> { pasien.nama_pasien }</Table.Cell>
+                            <Table.Cell className='text-gray-900'>{pasien.tanggal_lahir}</Table.Cell>
+                            <Table.Cell className='text-gray-900'>{pasien.kelas}</Table.Cell>
+                            <Table.Cell className='text-gray-900'>{pasien.jabatan.nama_jabatan}</Table.Cell>
+
                         </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                Microsoft Surface Pro
-                            </Table.Cell>
-                            <Table.Cell>White</Table.Cell>
-                            <Table.Cell>Laptop PC</Table.Cell>
-                            <Table.Cell>$1999</Table.Cell>
-                            <Table.Cell>
-                                <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                                    Edit
-                                </a>
-                            </Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Magic Mouse 2</Table.Cell>
-                            <Table.Cell>Black</Table.Cell>
-                            <Table.Cell>Accessories</Table.Cell>
-                            <Table.Cell>$99</Table.Cell>
-                            <Table.Cell>
-                                <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                                    Edit
-                                </a>
-                            </Table.Cell>
-                        </Table.Row>
+                         ))}
                     </Table.Body>
                 </Table>
             </div>
