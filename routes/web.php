@@ -33,9 +33,9 @@ use Inertia\Inertia;
 Route::controller(FrontController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/info', 'information');
+    Route::get('/deskripsi/{id}', 'deskripsiInfo');
     Route::get('/data', 'patientData');
     Route::get('/obat', 'dataObat');
-    Route::get('/deskripsi', 'deskripsiInfo');
     Route::get('/detailDemam', 'dDemam');
     Route::get('/detailMagh', 'magh');
     Route::get('/detailPusing', 'pusing');

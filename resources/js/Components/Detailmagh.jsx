@@ -2,13 +2,13 @@ import React from 'react';
 import { Card } from 'flowbite-react';
 const Detailmagh = () => {
     return (
-        <div className='overflow-x-auto min-h-screen items-center bg-gray-800 px-10 a pt-20 a pb-20'>
+        <div className='overflow-x-auto min-h-screen items-center bg-blue-900 px-10 a pt-20 a pb-20'>
             <h3 className="text-center text-4xl font-semibold a pt-10 pb-10">
                 <span className="text-cyan-600">Detail Magh</span>
                 <p className='text-center a text-2xl text-gray-200'>Info tentang Magh</p>
             </h3>
 
-            <Card href="#" className="a text-left px-10 bg-gray-200 pb-5">
+            <Card href="#" className="a text-left px-10 bg-gray-200 opacity-70 pb-5">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Penyebab Sakit Maag
                 </h5>

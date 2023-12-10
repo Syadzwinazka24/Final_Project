@@ -38,6 +38,7 @@
         </thead>
         <tbody>
             @foreach ($riwayatPenyakit as $row)
+            @csrf
             <tr>
 
                 <td>

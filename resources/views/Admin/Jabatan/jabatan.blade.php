@@ -71,7 +71,7 @@
                 <form action="{{ route('Admin.tambah.jabatan')}}" method="post">
                     @csrf
                     <div class="mb-2">
-                        <label for="nama_jabatan">Nma Jabatan</label>
+                        <label for="nama_jabatan">Nama Jabatan</label>
                         <input type="text" id="nama_jabatan" name="nama_jabatan" class="form-control" required><br>
                     </div>
 

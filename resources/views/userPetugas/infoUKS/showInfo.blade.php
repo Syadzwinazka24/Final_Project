@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('petugas.show.info', $row->id)}}" method="POST">
+                <form action="#" method="POST">
                     @csrf
                  
                     <div class="mb-3">
@@ -24,7 +24,10 @@
                         <input type="text" name="penerbit" class="form-control" id="penerbit" value="{{ $row->penerbit}}" readonly><br>
 
                         <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="{{ $row->deskripsi}}" readonly><br>
+                        <div class="card" style="padding-left: 10px;" readonly>
+                        <p>{!! $row->deskripsi !!}</p>
+                        </div>
+                       
 
                         <input type="hidden" name="id" value="{{ $row->id}}">
                     </div>

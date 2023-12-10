@@ -5,78 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in || Sign up from</title>
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- css stylesheet -->
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/login.css">
+    <title>signin-signup</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="signin-signup">
 
-    <div class="container" id="container">
-        <div class="form-container sign-in-container">
-                <!-- <h1 style="text-align: center; padding-top: 20px; color:white;">login page</h1> -->
-            <img src="/img/login.png" width="100%" style="padding-top: 35px;" alt="">
-        </div>
-        <!-- Untuk Login -->
-        <div class="form-container sign-up-container">
-            <form action="{{ route('login') }}" method="POST">
+            <!-- depan -->
+            <form action="{{ route('login') }}" method="post" class="sign-in-form">
                 @csrf
-                <h1>Login</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="email" placeholder="Username">
                 </div>
-                <span>or use your account</span>
-                <div class="infield">
-                    <input type="email" placeholder="Email" name="email" />
-                    <label></label>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password">
                 </div>
-                <div class="infield">
-                    <input type="password" name="password" placeholder="Password" />
-                    <label></label>
-                </div>
-                <a href="#" class="forgot">Forgot your password?</a>
-                <button>Submit</button>
+                <input type="submit" value="Login" class="btn">
+                <p class="social-text">fill in your correct data !</p>
+                <!-- <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign in</a></p> -->
             </form>
+
+            <!-- baliknya -->
+            <form action="" method="post" class="sign-up-form">
+                <h2 class="title">Announcement!!!</h2>
+                <h3 class="announce">
+                    To enter this dashboard page, only admins and uks officers can log in, while visitors to this website can only see the front page of the website, they cannot enter the dashboard, <br />Thank you.
+                </h3>
+            </form>
+
         </div>
-        <div class="overlay-container" id="overlayCon">
-            <div class="overlay">
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>To enter the back of the website, please click on the login below.</p>
-                    <button style="text-align: center;">Login</button>
+        <div class="panels-container">
+
+            <!-- halaman baliknya -->
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Hello Friends !!</h3>
+                    <p>Thank you for your attention
+                        for those concerned please re-login</p>
+                    <button class="btn" id="sign-in-btn">Back</button>
                 </div>
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button>Back</button>
-                </div>
+                <img src="img/dokter.png" alt="" class="image">
             </div>
-            <button id="overlayBtn"></button>
+
+            <!-- depan -->
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Want to log in? </h3>
+                    <p>who want to enter the dashboard page, please click the button below to find out the information</p>
+                    <button class="btn" id="sign-up-btn">Announcement !</button>
+                </div>
+                <img src="img/login.png" alt="" class="image">
+            </div>
         </div>
     </div>
-
-
-
-    <!-- js code -->
-    <script>
-        const container = document.getElementById('container');
-        const overlayCon = document.getElementById('overlayCon');
-        const overlayBtn = document.getElementById('overlayBtn');
-
-        overlayBtn.addEventListener('click', () => {
-            container.classList.toggle('right-panel-active');
-
-            overlayBtn.classList.remove('btnScaled');
-            window.requestAnimationFrame(() => {
-                overlayBtn.classList.add('btnScaled');
-            })
-        });
-    </script>
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>

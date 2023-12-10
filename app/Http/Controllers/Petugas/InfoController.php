@@ -99,4 +99,16 @@ class InfoController extends Controller
         }
     }
 
+    public function searchInfo(Request $request)
+    {
+
+        if ($request->has('search')) {
+            $info = info::where('judul_info', 'like', '%' . $request->search . '%')->get();
+        } else {
+            $info = info::all();
+        }
+
+        return view('userPetugas.infoUKS.info', compact('info'));
+    }
+
 }

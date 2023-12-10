@@ -1,24 +1,24 @@
-<div class="modal" tabindex="-1" id="edit{{ $row->id }}">
+<div class="modal" tabindex="-1" id="modal-default">
     <div class="modal-dialog">
+
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit Info UKS</h5>
+                <h5 class="modal-title">Tambah Info</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('petugas.update.info', $row->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('petugas.tambah.info')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="mb-2">
 
                         <label for="judul_info">Judul Info</label>
-                        <input type="text" value="{{ $row->judul_info }}" id="judul_info" name="judul_info" class="form-control" required><br>
+                        <input type="text" id="judul_info" name="judul_info" class="form-control" required><br>
 
                         <label for="isi_info">Waktu Pelaksanaan</label>
-                        <input type="text" value="{{ $row->isi_info }}" id="isi_info" name="isi_info" class="form-control" required><br>
+                        <input type="text" id="isi_info" name="isi_info" class="form-control" required><br>
 
                         <label for="penerbit">Penerbit</label>
-                        <input type="text" value="{{ $row->penerbit }}" id="penerbit" name="penerbit" class="form-control" required><br>
+                        <input type="text" id="penerbit" name="penerbit" class="form-control" required><br>
 
                         <div class="mb-3">
                             <div class="form-group">
@@ -31,11 +31,15 @@
                             </div>
                         </div>
 
-                       <label for="deskripsi">Deskripsi</label>
-                       <div class="mb-3">
-                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" value="{!! $row->deskripsi !!}">{!! $row->deskripsi !!}</textarea>
-                       </div>
-     
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea class="form-control  @error('deskripsi') is-invalid @enderror" id="artikel" name="deskripsi" rows="3" placeholder="Enter ..."></textarea>
+                            @error('deskripsi')
+                            <div class="invalid-feedback">
+                                <strong>{{ $message}}</strong>
+                            </div>
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="modal-footer">
@@ -47,13 +51,13 @@
         </div>
     </div>
     <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
-</div>
 
+</div>
 
 @section('ckEditor')
 <script>
     ClassicEditor
-        .create(document.querySelector('#deskripsi'))
+        .create(document.querySelector('#artikel'))
         .catch(error => {
             console.error(error);
         });

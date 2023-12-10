@@ -18,6 +18,10 @@ class FrontController extends Controller
         $info = info::all();
         return Inertia('Information', compact('info'));
     }
+    public function deskripsiInfo($id) {
+        $info = info::findOrFail($id);
+        return Inertia('Deskripsi', compact('info'));
+    }
 
     public function patientData() {
         $pasien = dataPasien::with('jabatan')->get();
@@ -27,9 +31,6 @@ class FrontController extends Controller
     public function dataObat() {
         $obat = obat::all();
         return Inertia('DataObat', compact('obat'));
-    }
-    public function deskripsiInfo() {
-        return Inertia('Deskripsi');
     }
 
     public function dDemam() {

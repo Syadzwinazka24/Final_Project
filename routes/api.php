@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PasienApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::controller(PasienApiController::class)->group(function () {
+    Route::get('/pasien', 'index');
 });

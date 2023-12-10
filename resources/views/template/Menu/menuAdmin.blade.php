@@ -11,7 +11,7 @@
                 <a href="{{ route('Admin.index.obat') }}" class="dropdown-item"><i class="fa fa-tablets me-2"></i>Data Obat</a>
                 <a href="{{ route('Admin.index.petugas') }}" class="dropdown-item"><i class="fa fa-user-nurse me-2"></i>Petugas UKS</a>
                 <a href="{{ route('Admin.index.jabatan') }}" class="dropdown-item"><i class="fa fa-school me-2"></i>Jabatan</a>
-                <a href="{{ route('Admin.index.info') }}" class="dropdown-item"><i class="fa fa-book-medical me-2"></i>Info UKS</a>
+                <!-- <a href="{{ route('Admin.index.info') }}" class="dropdown-item"><i class="fa fa-book-medical me-2"></i>Info UKS</a> -->
             </div>
         </div>
 
@@ -20,8 +20,8 @@
 
         <!-- <a href="{{ route('Admin.index.obat') }}" class="nav-item nav-link"><i class="fa fa-tablets me-2"></i>Data Obat</a>
         <a href="{{ route('Admin.index.petugas') }}" class="nav-item nav-link"><i class="fa fa-user-nurse me-2"></i>Petugas UKS</a>
-        <a href="{{ route('Admin.index.jabatan') }}" class="nav-item nav-link"><i class="fa fa-school me-2"></i>Jabatan</a>
-        <a href="{{ route('Admin.index.info') }}" class="nav-item nav-link"><i class="fa fa-book-medical me-2"></i>Info UKS</a> -->
+        <a href="{{ route('Admin.index.jabatan') }}" class="nav-item nav-link"><i class="fa fa-school me-2"></i>Jabatan</a> -->
+        <a href="{{ route('Admin.index.info') }}" class="nav-item nav-link"><i class="fa fa-book-medical me-2"></i>Info UKS</a>
 
         <a href="{{ route('index.chart') }}" class="nav-item nav-link"><i class="fa fa-ruler me-2"></i>Chart User</a>
         <a href="{{ route('Admin.index.Upetugas') }}" class="nav-item nav-link"><i class="fa fa-user me-2"></i>User</a>

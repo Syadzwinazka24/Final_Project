@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'flowbite-react';
 const Obat = ({ data }) => {
     return (
-        <div className="overflow-x-auto min-h-screen items-center bg-gray-800 px-10 a pt-24">
+        <div className="overflow-x-auto min-h-screen items-center bg-blue-900 px-10 a pt-24 pb-10">
             <h3 className="text-center text-4xl font-semibold a pt-10 pb-10">
                 <span className='text-gray-300'>Data </span><span className="text-cyan-600">Obat</span>
                 <p className='text-center text-2xl text-gray-200'>Menerangkan data obat yang tersedia di UKS</p>

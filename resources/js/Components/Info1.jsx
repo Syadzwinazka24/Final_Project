@@ -1,12 +1,12 @@
 import React from 'react';
 import { info } from 'autoprefixer';
+import Deskripsi_info from './Deskripsi_info';
 
 const Info1 = ({ data }) => {
     return (
         <div>
-            <div class="flex min-h-screen font-semibold items-center justify-center bg-gray-800">
-
-                <div class="absolute top-20 pt-10">
+            <div class="flex min-h-screen font-semibold items-center justify-center bg-blue-900 pb-10">
+                <div class="absolute top-20 pt-10 pb-10">
                     <p class="text-4xl font-semibold text-cyan-500">Information <span className='text-white'>About </span><span class="text-cyan-500"> UKS</span></p>
                 </div>
 
@@ -22,7 +22,7 @@ const Info1 = ({ data }) => {
                             <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
                                 <h1 class="font-dmserif text-3xl font-bold a text-cyan-400">{info.judul_info}</h1><br />
                                 <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Informasi terkait kegiatan dari UKS yang akan dilaksanakan pada tanggal {info.isi_info}</p>
-                                <a href='/deskripsi' class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</a>
+                                <a href={`/deskripsi/${info.id}`}  component={Deskripsi_info} class="rounded-full bg-neutral-600 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60 hover:bg-cyan-600 hover:text-white">See More</a>
                             </div>
                         </div>
 

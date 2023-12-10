@@ -1,8 +1,7 @@
 @extends('template.base')
-
 @section('title', 'Riwayat Penyakit')
-
 @section('content')
+
 <div class="rounded h-100 p-4 col-sm-12 col-xl-12">
     <div class=" rounded h-100 p-4">
         <h4 class="mb-4">Form edit Riwayat</h4>

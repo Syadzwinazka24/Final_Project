@@ -1,23 +1,9 @@
 import React from 'react';
 import { Table } from 'flowbite-react';
-import { Carousel } from 'flowbite-react';
-import buah from "../../../public/img/buah.jpg";
-import olahraga from "../../../public/img/olahraga.jpg";
-import minum from "../../../public/img/minum.jpg";
-import tidur from "../../../public/img/tidur2.jpg";
 
 const Data = ({ data }) => {
     return (
-        <div className="overflow-x-auto min-h-screen items-center bg-gray-800 px-10 a pt-24">
-
-            {/* <div className="h-auto w-full sm:h-64 xl:h-80 2xl:h-96">
-                <Carousel slideInterval={5000}>
-                    <img src= {buah}  alt="..."/>
-                    <img src= {olahraga} alt="..." />
-                    <img src= {minum} alt="..." />
-                    <img src= {tidur} alt="..." />
-                </Carousel>
-            </div> */}
+        <div className="overflow-x-auto min-h-screen items-center bg-blue-900 px-10 a pt-24 pb-10">
 
             <h3 className="text-center text-4xl font-semibold a pt-10 pb-10">
                 <span className='text-gray-300'>Data </span><span className="text-cyan-600">Pasien</span>

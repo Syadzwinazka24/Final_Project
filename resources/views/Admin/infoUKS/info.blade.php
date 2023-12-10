@@ -89,11 +89,11 @@
             @include('Admin.infoUKS.showInfo')
             @include('Admin.infoUKS.updateInfo')
             @include('Admin.infoUKS.deleteInfo')
-            
+
             @endforeach
         </tbody>
     </table>
-    
+
 </div>
 
 <!-- Modal -->

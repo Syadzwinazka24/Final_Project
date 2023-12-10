@@ -31,11 +31,11 @@
                             </div>
                         </div>
 
-                       <label for="deskripsi">Deskripsi</label>
-                       <div class="mb-3">
-                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" value="{!! $row->deskripsi !!}">{!! $row->deskripsi !!}</textarea>
-                       </div>
-     
+                        <label for="deskripsi">Deskripsi</label>
+                        <div class="mb-3">
+                            <textarea name="deskripsi" id="deskripsi" cols="30" rows="10" value="{!! $row->deskripsi !!}">{!! $row->deskripsi !!}</textarea>
+                        </div>
+
                     </div>
 
                     <div class="modal-footer">
@@ -52,11 +52,22 @@
 
 @section('ckEditor')
 <script>
-    ClassicEditor
-        .create(document.querySelector('#deskripsi'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
+    CKEDITOR.replace('deskripsi');
 
+    $(document).ready(function() {
+
+        $.fn.modal.Constructor.prototype.enforceFocus = function() {
+            modal_this = this
+            $(document).on('focusin.modal', function(e) {
+                if (modal_this.$element[0] !== e.target && !modal_this.$element.has(e.target).length
+                    // add whatever conditions you need here:
+                    &&
+                    !$(e.target.parentNode).hasClass('cke_dialog_ui_input_select') && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_text')) {
+                    modal_this.$element.focus()
+                }
+            })
+        };
+
+    });
+</script>
 @endsection
